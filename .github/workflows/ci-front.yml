@@ -35,7 +35,7 @@ jobs:
         run: npm -v
       
       - name: Install dependencies
-        run: yarn install
+        run: npm ci
 
       - name: List files in the repository after installing dependencies
         run: |
