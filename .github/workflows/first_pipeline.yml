@@ -51,6 +51,7 @@ jobs:
       
       - name: Run Angular tests
         run: npm run test -- --watch=false --browsers=ChromeHeadless
+        working-directory: ./front
 
       - run: echo "The preinstalled tools are located here on the runner ${{ runner.tool_cache }}."
       
