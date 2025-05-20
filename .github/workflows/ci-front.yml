@@ -21,7 +21,7 @@ jobs:
 
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}
+          ls
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -39,5 +39,5 @@ jobs:
 
       - name: List files in the repository after installing dependencies
         run: |
-          ls ${{ github.workspace }}
+          ls
     
