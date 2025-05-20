@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: CI - Build Angular Front
+    name: CI - Test & Build Angular Front
     runs-on: ubuntu-latest
     defaults:
       run:
