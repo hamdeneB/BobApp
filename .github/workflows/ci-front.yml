@@ -40,4 +40,7 @@ jobs:
       - name: List files in the repository after installing dependencies
         run: |
           ls
+
+      - name: Build Angular App
+        run : npm run build
     
