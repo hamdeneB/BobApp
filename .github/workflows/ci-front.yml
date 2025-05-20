@@ -41,6 +41,9 @@ jobs:
         run: |
           ls
 
+      - name: Run tests with coverage
+        run: npm run test -- --watch=false --browsers=ChromeHeadless --code-coverage
+
       - name: Build Angular App
         run : npm run build
     
