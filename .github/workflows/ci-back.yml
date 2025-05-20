@@ -22,3 +22,9 @@ jobs:
       - name: List files in the repository
         run: |
           ls
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+          distribution: 'temurin'
