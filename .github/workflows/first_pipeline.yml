@@ -1,7 +1,9 @@
 name: GitHub Actions Test
 on: 
   push:
-    branches : [main]
+    branches: [main]
+  pull_request:
+    branches: [main]
 jobs:
   Example-Actions-Job:
     name: Exploring GitHub Actions
