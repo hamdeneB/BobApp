@@ -1,0 +1,24 @@
+name: Back CI Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    paths: 'front/**'
+
+jobs:
+  build:
+    name: CI - Build Spring Boot Back
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: front
+        
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: List files in the repository
+        run: |
+          ls
