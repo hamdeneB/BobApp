@@ -35,8 +35,8 @@ jobs:
 
       - name: Debug coverage report
         run: |
-          ls -l coverage
-          cat coverage/lcov.info
+          ls -l coverage/bobapp
+          cat coverage/bobapp/lcov.info
         working-directory: front
 
       - name: Build Angular App
