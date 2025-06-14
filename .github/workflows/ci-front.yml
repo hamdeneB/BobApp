@@ -33,6 +33,12 @@ jobs:
       - name: Run tests with coverage
         run: npm run test -- --watch=false --browsers=ChromeHeadless --code-coverage
 
+      - name: Debug coverage report
+        run: |
+          ls -l coverage
+          cat coverage/lcov.info
+        working-directory: front
+
       - name: Build Angular App
         run : npm run build
 
