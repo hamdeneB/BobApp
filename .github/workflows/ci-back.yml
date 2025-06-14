@@ -38,7 +38,6 @@ jobs:
           name: back-coverage
           path: back/target/site/jacoco  
 
-
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
