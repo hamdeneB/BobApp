@@ -19,10 +19,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
 
-      - name: List files in the repository
-        run: |
-          ls
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -31,15 +27,8 @@ jobs:
       - name: Display Node.js version
         run: node -v
       
-      - name: Display npm version
-        run: npm -v
-      
       - name: Install dependencies
         run: npm ci
-
-      - name: List files in the repository after installing dependencies
-        run: |
-          ls
 
       - name: Run tests with coverage
         run: npm run test -- --watch=false --browsers=ChromeHeadless --code-coverage
