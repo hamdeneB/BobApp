@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: '16.17.1'
 
-      - name: Display Node.js version
+      - name: display Node.js version
         run: node -v
       
       - name: Install dependencies
