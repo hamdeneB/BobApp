@@ -1,57 +1,82 @@
 # BobApp
 
-Clone project:
+## 📑 Présentation
 
-> git clone XXXXX
+BobApp est un projet démontrant la mise en place complète d’une chaîne CI/CD professionnelle avec :
 
-## Front-end 
+- Backend : Spring Boot (Java 11)
+- Frontend : Angular
+- Intégration continue : GitHub Actions
+- Analyse de qualité : SonarCloud
+- Déploiement de conteneurs : Docker + Docker Hub
 
-Go inside folder the front folder:
+L’objectif est de valider automatiquement le code, assurer sa qualité et déployer les images sur un registre Docker.
 
-> cd front
+---
 
-Install dependencies:
+## 🔧 Technologies utilisées
 
-> npm install
+- **Backend** : Java 11, Spring Boot, Maven
+- **Frontend** : Angular, Node.js, npm
+- **CI/CD** : GitHub Actions
+- **Analyse qualité** : SonarCloud
+- **Tests** : JUnit (Back), Karma/Jasmine (Front)
+- **Couverture de tests** : Jacoco (Back), lcov (Front)
+- **Docker** : DockerHub (Public Registry)
 
-Launch Front-end:
+---
 
-> npm run start;
+## 🚀 Workflows CI/CD mis en place
 
-### Docker
+### ✅ CI Frontend (`.github/workflows/ci-front.yml`)
 
-Build the container:
+- Installation des dépendances
+- Exécution des tests unitaires et génération de la couverture de code
+- Analyse qualité SonarCloud
 
-> docker build -t bobapp-front .  
+### ✅ CI Backend (`.github/workflows/ci-back.yml`)
 
-Start the container:
+- Build et tests Maven
+- Génération du rapport de couverture Jacoco
+- Analyse qualité SonarCloud
 
-> docker run -p 8080:8080 --name bobapp-front -d bobapp-front
+### ✅ CD DockerHub (`.github/workflows/cd-dockerhub.yml`)
 
-## Back-end
+- Build des images Docker Front et Back
+- Push automatique des images sur Docker Hub :
+    - `hamdene/bobapp-front:latest`
+    - `hamdene/bobapp-back:latest`
 
-Go inside folder the back folder:
+---
 
-> cd back
+## 🔐 Gestion des secrets GitHub Actions
 
-Install dependencies:
+Les secrets suivants sont configurés dans le repository :
 
-> mvn clean install
+| Secret Name | Description |
+|--------------|-------------|
+| `SONAR_TOKEN` | Token d’accès SonarCloud |
+| `SONAR_HOST_URL` | URL de SonarCloud |
+| `DOCKERHUB_USERNAME` | Username Docker Hub |
+| `DOCKERHUB_TOKEN` | Token personnel Docker Hub |
 
-Launch Back-end:
+---
 
->  mvn spring-boot:run
+## 📊 Métriques obtenues (exemple de la dernière exécution)
 
-Launch the tests:
+| Application | Coverage | Quality Gate |
+|--------------|----------|---------------|
+| Frontend     | 83.3%    | Passed        |
+| Backend      | 38.8%    | Passed        |
 
-> mvn clean install
 
-### Docker
+---
 
-Build the container:
+## 📎 Liens utiles
 
-> docker build -t bobapp-back .  
+- [Repository SonarCloud Frontend](https://sonarcloud.io)
+- [Repository SonarCloud Backend](https://sonarcloud.io)
+- [Docker Hub Frontend](https://hub.docker.com/r/hamdene/bobapp-front)
+- [Docker Hub Backend](https://hub.docker.com/r/hamdene/bobapp-back)
 
-Start the container:
-
-> docker run -p 8080:8080 --name bobapp-back -d bobapp-back 
+---
